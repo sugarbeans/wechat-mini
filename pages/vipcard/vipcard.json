@@ -1,0 +1,10 @@
+{
+  "navigationStyle":"default",
+  "navigationBarBackgroundColor":"#fff",
+  "navigationBarTitleText":"贵宾卡",
+  "navigationBarTextStyle":"black",
+  "backgroundTextStyle": "light",
+  "usingComponents": {
+    "mp-toptips": "../../component/toptips/toptips"
+  }
+}

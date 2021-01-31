@@ -1,0 +1,59 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/order/order",
+    "pages/orderCode/order",
+    "pages/mine/mine",
+    "pages/ticket/ticket",
+    "pages/ticket-info/ticket-info",
+    "pages/loginPage/loginPage",
+    "pages/searchpage/searchpage",
+    "pages/myfavourite/myfavourite",
+    "pages/bookproduct/bookproduct",
+    "pages/payorderpage/payorderpage",
+    "pages/addvistorpage/addvistorpage",
+    "pages/orderdetail/orderdetail",
+    "pages/commonvistor/commonvistor",
+    "pages/vipcard/vipcard",
+    "pages/vipinfo/vipinfo"
+  ],
+  "window": {
+    "navigationStyle": "custom",
+    "withShareTicket":true
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "assets/img/homedark.png",
+        "selectedIconPath": "assets/img/homelight.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/ticket/ticket",
+        "iconPath": "assets/img/ticketdark.png",
+        "selectedIconPath": "assets/img/ticketlight.png",
+        "text": "景区"
+      },
+      {
+        "pagePath": "pages/order/order",
+        "iconPath": "assets/img/orderdark.png",
+        "selectedIconPath": "assets/img/orderlight.png",
+        "text": "订单"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "iconPath": "assets/img/minedark.png",
+        "selectedIconPath": "assets/img/minelight.png",
+        "text": "我的"
+      }
+    ],
+    "selectedColor":"#35c0ff"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "backgroundTextStyle": "dark",
+  "usingComponents": {
+    "iconfont": "/iconfont/iconfont"
+  }
+}

@@ -1,0 +1,241 @@
+{
+  "description": "项目配置文件",
+  "packOptions": {
+    "ignore": []
+  },
+  "setting": {
+    "urlCheck": false,
+    "es6": true,
+    "enhance": false,
+    "postcss": true,
+    "preloadBackgroundData": false,
+    "minified": true,
+    "newFeature": true,
+    "coverView": true,
+    "nodeModules": true,
+    "autoAudits": false,
+    "showShadowRootInWxmlPanel": true,
+    "scopeDataCheck": false,
+    "uglifyFileName": false,
+    "checkInvalidKey": true,
+    "checkSiteMap": true,
+    "uploadWithSourceMap": true,
+    "compileHotReLoad": false,
+    "useMultiFrameRuntime": true,
+    "useApiHook": true,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    },
+    "bundle": false,
+    "useIsolateContext": true,
+    "useCompilerModule": false,
+    "userConfirmedUseCompilerModuleSwitch": false,
+    "userConfirmedBundleSwitch": false,
+    "packNpmManually": false,
+    "packNpmRelationList": [],
+    "minifyWXSS": true,
+    "useApiHostProcess": false
+  },
+  "compileType": "miniprogram",
+  "libVersion": "2.10.3",
+  "appid": "wx4074920d738b993b",
+  "projectname": "dyxcy-1",
+  "debugOptions": {
+    "hidedInDevtools": []
+  },
+  "isGameTourist": false,
+  "simulatorType": "wechat",
+  "simulatorPluginLibVersion": {},
+  "condition": {
+    "search": {
+      "list": []
+    },
+    "conversation": {
+      "list": []
+    },
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "currentL": -1,
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "id": -1,
+          "name": "pages/ticket/ticket",
+          "pathName": "pages/ticket/ticket",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": 1,
+          "name": "pages/ticket-info/ticket-info",
+          "pathName": "pages/ticket-info/ticket-info",
+          "query": "encryptId=MQ==",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/mine/mine",
+          "pathName": "pages/mine/mine",
+          "query": "encryptId=MQ==",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/ticket/ticket",
+          "pathName": "pages/ticket/ticket",
+          "query": "encryptGoodsId=MQ%3D%3D",
+          "scene": null
+        },
+        {
+          "id": 4,
+          "name": "pages/ticket-info/ticket-info",
+          "pathName": "pages/ticket-info/ticket-info",
+          "query": "encryptId=OTc2",
+          "scene": null
+        },
+        {
+          "id": 5,
+          "name": "pages/bookproduct/bookproduct",
+          "pathName": "pages/bookproduct/bookproduct",
+          "query": "encryptId=NDEyOA==",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/mine/mine",
+          "pathName": "pages/mine/mine",
+          "query": "encryptId=NDEyOA&number=1",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/scenicpage/scenicpage",
+          "pathName": "pages/scenicpage/scenicpage",
+          "query": "encryptId=NDEyOA&number=1",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/mine/mine",
+          "pathName": "pages/mine/mine",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/loginPage/loginPage",
+          "pathName": "pages/loginPage/loginPage",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/loginPage/loginPage",
+          "pathName": "pages/loginPage/loginPage",
+          "query": "encryptId=NDEyOA&number=10",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/addvistorpage/addvistorpage",
+          "pathName": "pages/addvistorpage/addvistorpage",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/order/order",
+          "pathName": "pages/order/order",
+          "query": "encryptId=OTc2",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/commonvistor/commonvistor",
+          "pathName": "pages/commonvistor/commonvistor",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/searchpage/searchpage",
+          "pathName": "pages/searchpage/searchpage",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/order/order",
+          "pathName": "pages/order/order",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/payorderpage/payorderpage",
+          "pathName": "pages/payorderpage/payorderpage",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/scenicpage/scenicpage",
+          "pathName": "pages/scenicpage/scenicpage",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/scenicpage/scenicpage",
+          "pathName": "pages/scenicpage/scenicpage",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/ticket/ticket",
+          "pathName": "pages/ticket/ticket",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/changguan/changguan",
+          "pathName": "pages/changguan/changguan",
+          "query": "encryptId=NDEyOA==",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/payorderpage/payorderpage",
+          "pathName": "pages/payorderpage/payorderpage",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/myfavourite/myfavourite",
+          "pathName": "pages/myfavourite/myfavourite",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": 23,
+          "name": "pages/ticket-info/ticket-info",
+          "pathName": "pages/ticket-info/ticket-info",
+          "query": "encryptId=MTE5&code=true",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

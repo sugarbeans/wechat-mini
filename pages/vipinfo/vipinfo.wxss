@@ -1,0 +1,143 @@
+.main{
+  width: 90%;
+  height: 100%;
+  margin: 0 auto;
+}
+.top-image {
+  width: 100%;
+  height: 180px;
+}
+.top-image >image {
+  width: 100%;
+  height: 100%;
+}
+@import '../../assets/style/iconfont.wxss';
+page{
+  background-color: #ffffff;
+}
+.number-box{
+  height: 40px;
+  display: flex;
+  margin-top: 10px;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px dashed #35c0ff;
+}
+.change-box{
+  width: 30%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 10px;
+}
+.change-box>text{
+  display: inline-block;
+  margin: 0 10px;
+}
+.input-box{
+  flex: 1;
+  background-color: #f9f9f9;
+  text-align: center;
+  margin: 0 10px;
+}
+.name-box{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  box-sizing: border-box;
+  position: relative;
+}
+.name{
+  width: 22%;
+  text-align: center;
+  font-size: 14px;
+}
+.name-type{
+  position: absolute;
+  left: 0;
+  top: 55px;
+  width: 100%;
+  z-index: 9999;
+  background-color: #ffffff;
+}
+.all-name-type-item{
+  height: 40px;
+  line-height: 40px;
+  padding: 0 30px;
+  background-color: #ffffff;
+  box-sizing: border-box;
+  border-bottom: 1px solid #f9f9f9;
+}
+.name-input{
+  flex: 1;
+  background-color: #f9f9f9;
+  height: 40px;
+  border-radius: 8px;
+  font-size: 16px;
+  padding-left: 10px;
+  box-sizing: border-box;
+}
+.tui-fr {
+  width: 80px;
+  margin-right: 20px;
+}
+.bottom-image {
+  width: 100%;
+  height: 840px;
+  margin-bottom: 60px;
+}
+.bottom-image >image {
+  width: 100%;
+  height: 100%;
+}
+.save-box{
+  position: fixed;
+  left: 0;
+  bottom:0;
+  z-index: 999;
+  background-color: #ffffff;
+  width: 100%;
+  height: 64px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 3%;
+  box-sizing: border-box;
+}
+.price{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  line-height: 20px;
+}
+.price>view:first-child{
+  font-size: 16px;
+  color: #bcbcbc;
+}
+.price>view:last-child{
+  color: red;
+}
+.price-num{
+  font-size: 20px;
+  font-weight: bold;
+}
+.btn{
+  width: 40%;
+  height: 40px;
+  background-color: #1aa3c3;
+  border-radius: 20px;
+  line-height: 40px;
+  text-align: center;
+  color: #ffffff;
+  font-size: 20px;
+  z-index: 99999;
+}
+.detail-box{
+  border-top: 1px dashed #35c0ff;
+  padding: 10px 20px;
+}
+.detail {
+  color: red;
+  font-size: 12px;
+}

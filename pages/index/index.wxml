@@ -1,0 +1,126 @@
+<!--index.wxml-->
+<view class="main">
+  <mp-toptips msg="{{errorMsg}}" type="error" show="{{showError}}"></mp-toptips>
+  <swiper style="width: 100%; height: 255px;"  autoplay="true" circular="true">
+    <swiper-item><image src="../../assets/banner/util-bg.png"></image></swiper-item>
+    <swiper-item><image src="../../assets/banner/banner-01.png"></image></swiper-item>
+    <swiper-item><image src="../../assets/banner/banner-02.png"></image></swiper-item>
+    <swiper-item><image src="../../assets/banner/banner-00.png"></image></swiper-item>
+  </swiper>
+  <view class="logo">
+    <view class="logo-box">
+      <image class="logo-image" src="../../assets/banner/logo-bg.png"></image>
+    </view>
+  </view>
+  <view class="logo-btn">
+    <view class="search" bindtap="toSearch">
+      <view class="search-text">
+        <text class="iconfont icon-sousuo"></text>
+        <text class="search-text-item">搜索景区 / 酒店</text>
+      </view>
+    </view>
+    <view class="icon-box">
+      <view class="icon-a" data-id="1" bindtap="toBase">
+        <view class="icon-img a"><text class="iconfont icon-menpiao"></text></view>
+        <view class="icon-text">自助购票</view>
+      </view>
+       <view class="icon-a" data-id="2" bindtap="toBase">
+        <view class="icon-img-vip"><image src="../../assets/banner/VIP.png"></image></view>
+        <view class="icon-text" style="color: #fea000">城市贵宾卡</view>
+      </view>
+      <view class="icon-a" data-id="3" bindtap="toBase">
+        <view class="icon-img b"><text class="iconfont icon-jiudian"></text></view>
+        <view class="icon-text">景区导览</view>
+      </view>
+      <view class="icon-a" data-id="4" bindtap="toBase">
+        <view class="icon-img c"><text class="iconfont icon-changguan"></text></view>
+        <view class="icon-text">周边景点</view>
+      </view>
+    </view>
+    <view class="icon-box2">
+      <view class="icon-a" data-id="5" bindtap="toBase">
+        <view class="icon-img d"><text class="iconfont icon-xianlu"></text></view>
+        <view class="icon-text">游玩攻略</view>
+      </view>
+      <view class="icon-a" data-id="6" bindtap="toBase">
+        <view class="icon-img e"><text class="iconfont icon-techan"></text></view>
+        <view class="icon-text">评价建议</view>
+      </view>
+    </view>
+  </view>
+  <!-- 热门景区 -->
+  <view class="hot-ticket" wx:if="{{hotTicketList.length>0}}">
+    <view class="hot-ticket-title">
+      <text class="hot-ticket-title-text">热门景区</text>
+      <view class="hot-ticket-title-more" bindtap="toBase" data-id="1">更多<text class="iconfont icon-jiantou1"></text></view>
+      <image class="hot-ticke-border" src="../../assets/banner/boder-bottom.png"></image>
+    </view>
+    <view class="ticket-main">
+      <view class="ticket-box" data-id="{{hotTicketList[0].id}}" bindtap="toTicket">
+        <view class="ticket-image-box">
+          <image class="ticket-image" src="{{hotTicketList[0].imageList[0]}}" binderror="bindErrorImg"  data-errorimg="{{0}}" />
+        </view>
+        <view class="ticket-text-box">
+          <view >{{hotTicketList[0].name}}</view>
+          <view >{{hotTicketList[0].level}}--{{hotTicketList[0].address}}</view>
+        </view>
+      </view>
+            <view class="ticket-box" data-id="{{hotTicketList[1].id}}" bindtap="toTicket">
+        <view class="ticket-image-box">
+          <image class="ticket-image" src="{{hotTicketList[1].imageList[1]}}" binderror="bindErrorImg"  data-errorimg="{{0}}" />
+        </view>
+        <view class="ticket-text-box">
+          <view >{{hotTicketList[1].name}}</view>
+          <view >{{hotTicketList[1].level}}--{{hotTicketList[1].address}}</view>
+        </view>
+      </view>
+      <view class="hot-small">
+        <view class="hot-small-box" wx:for="{{hotTicketList}}" wx:for-index="index" wx:key="encryptId" wx:if="{{index>1 && index<5}}" data-id="{{item.id}}" bindtap="toTicket">
+          <image class="hot-small-img" src="{{item.imageList[0]}}" binderror="bindErrorImg" data-errorimg="{{0}}" />
+          <view class="hot-small-title">{{item.name}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 热门酒店 -->
+  <view class="hot-hotel" wx:if="{{hotHotelList.length>0}}">
+    <view class="hot-ticket-title">
+      <text class="hot-ticket-title-text">热门酒店</text>
+      <view class="hot-ticket-title-more" bindtap="toBase" data-id="2">更多<text class="iconfont icon-jiantou1"></text></view>
+      <image class="hot-ticke-border" src="../../assets/banner/boder-bottom.png"></image>
+    </view>
+    <view class="ticket-box">
+      <view>
+        <image class="ticket-image" src=""></image>
+      </view>
+      <view class="ticket-text-box">
+        <view >xxx酒店</view>
+        <view >介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍</view>
+      </view>
+    </view>
+    <view class="hot-small">
+      <view class="hot-small-box" wx:for="{{hotHotelList}}" wx:for-index="index" wx:key="{{index}}">
+        <image class="hot-small-img" src="" />
+        <view class="hot-small-title">哈哈</view>
+      </view>
+    </view>
+  </view>
+  <image class="util-bg" src="../../assets/banner/util-bg.png"></image>
+  <view class="footer">
+    <image style="width: 15px; height: 15px; margin-right: 3px; margin-top: -3px;" src="../../assets/banner/favicon.png" />鼎游信息 
+    <text style="color: #666666;margin-left: 3px; ">提供技术支持</text>
+  </view>
+</view>
+<dialog-other title="景区公告" show="{{detailShow}}" bindbuttontap="tapDialogButton" buttons="{{textButton}}">
+  <view class="rule-item">
+    从2020年12月11日开始，瘦西湖清淤疏浚工程启动，瘦西湖开始干塘啦！
+    从2020年12月11日开始，瘦西湖清淤疏浚工程启动，瘦西湖开始干塘啦！
+    从2020年12月11日开始，瘦西湖清淤疏浚工程启动，瘦西湖开始干塘啦！
+    从2020年12月11日开始，瘦西湖清淤疏浚工程启动，瘦西湖开始干塘啦！
+    从2020年12月11日开始，瘦西湖清淤疏浚工程启动，瘦西湖开始干塘啦！
+    从2020年12月11日开始，瘦西湖清淤疏浚工程启动，瘦西湖开始干塘啦！
+    从2020年12月11日开始，瘦西湖清淤疏浚工程启动，瘦西湖开始干塘啦！
+    从2020年12月11日开始，瘦西湖清淤疏浚工程启动，瘦西湖开始干塘啦！
+    从2020年12月11日开始，瘦西湖清淤疏浚工程启动，瘦西湖开始干塘啦！
+  </view>
+</dialog-other>

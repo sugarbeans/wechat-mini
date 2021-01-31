@@ -1,0 +1,26 @@
+<view class="container">
+  <mp-toptips msg="{{errorMsg}}" type="error" show="{{showError}}"></mp-toptips>
+  <view class="name-box">
+    <view class="name">姓 名</view>
+    <input class="name-input" value="{{name}}" bindinput="getName" auto-focus placeholder="请输入姓名" maxlength="6" />
+  </view>
+  <view class="name-box">
+    <view class="name">电 话</view>
+    <input class="name-input" value="{{phone}}" bindinput="getPhone" placeholder="请输入电话号码" maxlength="11" />
+  </view>
+  <view class="name-box">
+    <view class="name {{codeTypeFlag?'active-type':''}}" bindtap="chooseCodeType">{{typeName}}<text class="iconfont icon-xsj"></text></view>
+    <input class="name-input" value="{{code}}" bindinput="getCode" placeholder="请输入证件号码" maxlength="18" />
+    <view wx:if="{{codeTypeFlag}}" class="name-type">
+      <view class="all-name-type-item" wx:for="{{visitorType}}" wx:for-index="i"  wx:key="id" data-id="{{item.id}}" data-name="{{item.value}}" bindtap="chooseTypeItem">{{item.value}}</view>
+    </view>
+  </view>
+  <!-- <view class="switch-box">
+    <view class="switch-text">是否设置为常用联系人</view>
+    <switch class="tui-fr" checked="{{isChecked}}" bindchange="changeSwitch"/>
+  </view> -->
+  <view class="finish-btn">
+    <!-- <view class="btn" bindtap="finishAddVistor">完成</view> -->
+    <button loading="{{loading}}" bindtap="finishAddVistor" type="primary">完成</button>
+  </view>
+</view>

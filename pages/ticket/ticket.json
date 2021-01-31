@@ -1,0 +1,11 @@
+{
+  "navigationStyle":"default",
+  "navigationBarBackgroundColor":"#fff",
+  "navigationBarTitleText":"景区",
+  "navigationBarTextStyle":"black",
+  "backgroundTextStyle": "light",
+  "usingComponents": {
+    "search-bar":"../../component/type-search-bar/search-bar",
+    "mp-toptips": "../../component/toptips/toptips"
+  }
+}

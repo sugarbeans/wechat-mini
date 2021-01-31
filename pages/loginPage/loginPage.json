@@ -1,0 +1,10 @@
+{
+  "navigationStyle":"default",
+  "navigationBarBackgroundColor":"#fff",
+  "navigationBarTitleText":"微信授权登录",
+  "navigationBarTextStyle":"black",
+  "backgroundTextStyle": "light",
+  "usingComponents": {
+    "mp-toptips": "../../component/toptips/toptips"
+  }
+}

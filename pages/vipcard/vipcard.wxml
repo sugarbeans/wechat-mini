@@ -1,0 +1,36 @@
+<!--index.wxml-->
+<view class="main">
+  <!-- 热门景区 -->
+  <view class="hot-ticket">
+    <view class="ticket-main">
+      <view class="ticket-box" data-type="A" bindtap="toTicket" style="box-shadow: 10px 10px 5px #1f5248;">
+        <view class="ticket-image-box">
+          <image class="ticket-image" src="../../assets/banner/vip-a.png"/>
+        </view>
+        <view class="ticket-text-box">
+          <view class="product-price"><text>￥</text><text>258</text>/张</view>
+          <view style="color: #1f5248;"> 扬州旅游贵宾年卡(A卡)</view>
+          <view >可游览景点范围：瘦西湖、个园、何园、大明寺、汉陵苑、茱萸湾、马可波罗花世界7家收费景区。</view>
+        </view>
+      </view>
+      <view class="ticket-box" data-type="B"  bindtap="toTicket" style="box-shadow: 10px 10px 5px #cf9461;">
+        <view class="ticket-image-box">
+          <image class="ticket-image" src="../../assets/banner/vip-b.png" />
+        </view>
+        <view class="ticket-text-box">
+           <view class="product-price"><text>￥</text><text>318</text>/张</view>
+          <view style="color: #cf9461;">扬州旅游贵宾年卡(B卡)</view>
+          <view >可游览：瘦西湖、个园、何园、大明寺、汉陵苑、茱萸湾、马可波罗花世界、唐城遗址、八怪纪念馆、汪氏小苑、普哈丁园、琼花观、吴道台宅第、凤凰岛、
+            途居扬州国际露营地(润扬湿地公园)、隋炀帝陵、卢氏盐商、陈园、宝应湖国家湿地公园、宝应射阳湖荷园、仪征捺山地质公园、仪征天乐湖嬉乐谷、高邮盂城驿、
+            高邮文游台和东关街六景点(武当行宫、街南书屋十二景、华氏园、李长乐故居、逸圃、潘玉良展示馆)30家收费景区。</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <image class="util-bg" src="../../assets/banner/util-bg.png"></image>
+  <view class="footer">
+    <image style="width: 15px; height: 15px; margin-right: 3px; margin-top: -3px;" src="../../assets/banner/favicon.png" />鼎游信息 
+    <text style="color: #666666;margin-left: 3px; ">提供技术支持</text>
+  </view>
+</view>
+

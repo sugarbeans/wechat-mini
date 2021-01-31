@@ -1,0 +1,131 @@
+@import '../../assets/style/iconfont.wxss';
+.order-code-box{
+  width: 100%;
+  text-align: center;
+  margin: 3%;
+  background-color: #eaf8ff;
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding-bottom: 20px;
+}
+.icon-wzf{
+  font-size: 40px;
+}
+.order-statu{
+  height: 30px;
+  line-height: 30px;
+  width: 100%;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+}
+.order-code{
+  height: 30px;
+  color: #434343;
+}
+.order-code>text{
+  line-height: 30px;
+}
+.order-title-box{
+  margin: 3%;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding: 2%;
+  box-sizing: border-box;
+}
+.order-title{
+  height: 30px;
+  line-height: 30px;
+  font-size: 18px;
+  font-weight: bold;
+}
+.order-detail{
+  display: flex;
+  justify-content: space-between;
+  background-color: #f8f8f8;
+}
+.order-a{
+  height: 30px;
+  line-height: 30px;
+}
+.order-c{
+  font-size: 16px;
+  color: #888888;
+}
+.order-b{
+  font-size: 16px;
+  color: #434343;
+}
+.order-price{
+  margin-top: 60px;
+  font-size: 18px;
+  color: #434343;
+}
+.rule{
+  margin: 0 1%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.ticket-rule{
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #f6f9fb;
+  color: #434343;
+  margin: 10px 0;
+}
+.icon-ok2{
+  color: #c9dae1;
+  font-size: 18px;
+}
+.order-time-box{
+  margin: 3%;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding: 2%;
+  box-sizing: border-box;
+}
+.order-time{
+  font-size: 16px;
+  height: 30px;
+  line-height: 30px;
+}
+.order-detail-vistor-item{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 30px;
+}
+.vistor-name{
+  width: 25%;
+  text-align: center;
+  font-size: 16px;
+}
+.vistor-qrcode{
+  width: 25%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.vistor-code-num{
+  flex: 1;
+  text-align: left;
+  font-size: 16px;
+}
+.icon-qrcode{
+  color: #35c0ff;
+  font-size: 20px;
+}
+.vistor-qrcode-text{
+  font-size: 16px;
+}
+.order-detail-s{
+  display: flex;
+  flex-wrap: wrap;
+}
+.a{
+  display: inline-block;
+  width: 50%;
+}

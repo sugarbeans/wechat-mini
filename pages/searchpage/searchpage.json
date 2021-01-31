@@ -1,0 +1,11 @@
+{
+  "navigationStyle":"default",
+  "navigationBarBackgroundColor":"#fff",
+  "navigationBarTitleText":"搜索",
+  "navigationBarTextStyle":"black",
+  "backgroundTextStyle": "light",
+  "usingComponents": {
+    "mp-searchbar": "../../component/searchbar/searchbar",
+    "mp-toptips": "../../component/toptips/toptips"
+  }
+}

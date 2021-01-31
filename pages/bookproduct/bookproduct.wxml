@@ -1,0 +1,151 @@
+<view wx:if="{{showPayLoading}}">
+  <loading loadingText="{{loadingText}}"></loading>
+</view>
+<view class="book-container {{showCalendar?'date-out-box-fixed':''}}">
+  <mp-toptips msg="{{errorMsg}}" delay="{{delay}}" type="{{error}}" show="{{showError}}"></mp-toptips>
+  <view wx:if="{{showCalendar}}" bindtap="closeCalendaer" class="mask-box"></view>
+  <view class="date-out-box ">
+    <view class="title">{{productInfo.ticketName}}</view>
+    <view class="chose-date">
+      <view class="chose-title">选择日期 <text style="color:#35c0ff;font-size: 16px;margin-left: 5px;">{{newDate}}</text></view>
+      <view class="date-box" style=" white-space: nowrap;">
+        <view class="date-item {{item.date==newDate?'active':''}}" wx:for="{{dateList}}" wx:for-item="item" wx:for-index="index" wx:key="index" data-obj="{{item}}" bindtap="choseDateOut" wx:if="{{index<3}}">
+          <view class="date">{{item.date}}</view>
+          <view class="price-stock">
+            <view class="price">￥:60</view>
+          </view>
+          <text wx:if="{{item.date==newDate}}" class="iconfont icon-ok icon-ok1"></text>
+        </view>
+        <view class="more-date" bindtap="showCalendarDialog">
+          <view ><text class="iconfont icon-jiantou1"></text></view>
+        </view>
+        <view class="more-date-box" wx:if="{{showCalendar}}">
+          <price-calendar bind:preDate="preDate" bind:choseDate="choseDate" encryptId="{{encryptId}}" priceList="{{dateList}}" dateActive="{{dateActive}}"></price-calendar>
+        </view>
+      </view>
+    </view>
+  </view>
+	<view class="date-out-box  mt-20">
+    <view class="chose-date">
+      <view class="chose-title">选择分时 <text style="color:#35c0ff;font-size: 16px;margin-left: 5px;">{{newTime}}</text></view>
+      <view class="time-box" style=" white-space: nowrap;">
+        <view class="time-item {{item.seq==activeTime?'active':''}}" wx:for="{{stockList}}" wx:for-item="item" wx:for-index="index" wx:key="index" data-stock-obj="{{item}}" bindtap="chooseTimeOut">
+          <view class="date">{{item.beginTime}}:{{item.beginMinute}}~{{item.endTime}}:{{item.endMinute}}</view>
+          <view class="price-stock">
+            <view class="price">余:{{item.numb-item.saleNumb}}</view>
+          </view>
+          <text wx:if="{{item.seq==activeTime}}" class="iconfont icon-ok icon-ok1"></text>
+        </view>
+      </view>
+      <!-- <view class="time-box" style=" white-space: nowrap;">
+        <view class="time-title"><image src="../../assets/banner/night.png" /></view>
+        <view class="time-item {{item.seq==activeTime?'active':''}}" wx:for="{{stockList}}" wx:for-item="item" wx:for-index="index" wx:key="index" data-stock-obj="{{item}}" bindtap="chooseTimeOut">
+          <view class="date">{{item.beginTime}}:{{item.beginMinute}}~{{item.endTime}}:{{item.endMinute}}</view>
+          <view class="price-stock">
+            <view class="price">余:{{item.numb-item.saleNumb}}</view>
+          </view>
+          <text wx:if="{{item.seq==activeTime}}" class="iconfont icon-ok icon-ok1"></text>
+        </view>
+      </view> -->
+    </view>
+	</view>
+  <view class="number-box-price" wx:for="{{priceList}}" wx:for-item="item" wx:for-index="index" wx:key="index">
+    <view class="number-box">
+      <view class="ticket-title" >{{item.szcrowdkindname}} [￥{{item.todayPrice}}]</view>
+      <view class="change-box">
+        <iconfont name="jian-copy1" bindtap="minusTicketIndex" data-index="{{index}}" size="{{28}}"></iconfont>
+        <input class="input-box" value="{{item.number}}" data-index="{{index}}" bindblur="getNumber" />
+        <iconfont name="add" bindtap="addTicketIndex" data-index="{{index}}" size="{{28}}"></iconfont>
+      </view>
+    </view>
+    <!-- <view class="vistor-box" wx-if="{{item.number>0 && item.isrealname}}">
+      <view class="vistor-info-add">
+        <view class="ticket-title"></view>
+        <view class="add-vistor" data-price-obj="{{item}}" data-price-index="{{index}}" bindtap="showMaskDialog">+ 新增出行人</view>
+      </view>
+      <view class="vistor">
+        <view class="vistor-item">
+          <text class="{{item.vistorActive==keys?'vistor-active':''}}" wx:for="{{item.vistorList}}" wx:for-index="keys" wx:key="keys" wx:for-item="vistor" data-id="{{keys}}"  bindtap="changeVistor" data-index="{{index}}" data-obj="{{vistor}}" wx:if="{{keys<3}}" bindlongpress="longChange">{{vistor.name}}</text>
+        </view>
+        <view class="more-vistor" wx:if="{{moreVistor}}">
+          <text class="{{item.vistorActive==keys?'vistor-active':''}}" wx:for="{{item.vistorList}}" wx:for-index="keys" wx:key="keys" wx:for-item="vistor" data-id="{{keys}}" bindtap="changeVistor" data-index="{{index}}" wx:if="{{keys>=3}}" data-obj="{{vistor}}" bindlongpress="longChange">{{vistor.name}}</text>
+        </view>
+        <view class="add-vistor" wx:if="{{item.vistorList.length>3}}" bindtap="showMoreVistor">更多({{item.vistorList.length-3==0?'':item.vistorList.length-3}})</view>
+      </view>
+      <view class="vistor-info" wx:if="{{item.vistorActive != null}}">
+        <view class="vistor-name">
+          <text class="iconfont icon-s icon-xingming"></text>
+          <text class="vistor-type">姓  名</text>
+          <text class="vistor-c">{{name}}</text>
+        </view>
+        <view class="vistor-name">
+          <text class="iconfont icon-s icon-shouji"></text>
+          <text class="vistor-type">手机号</text>
+          <text class="vistor-c">{{phone}}</text>
+        </view>
+        <view class="vistor-name">
+          <text class="iconfont icon-s icon-sfz"></text>
+          <text class="vistor-type">证件号</text>
+          <text class="vistor-c">{{code}}</text>
+        </view>
+      </view>
+    </view> -->
+  </view>
+  <view class="ticket-contact">
+    <view class="vistor-info-add">
+      <view class="ticket-title">联系人信息</view>
+      <!-- <view class="add-vistor" bindtap="showMaskDialog">+ 新增联系人</view> -->
+    </view>
+    <view class="vistor">
+        <view class="vistor-item">
+          <text class="{{commonVistorActive==keys?'vistor-active':''}}" wx:for="{{commonVistorList}}" wx:for-index="keys" wx:key="keys" wx:for-item="vistor" data-id="{{keys}}"  bindtap="changeVistor" data-index="{{index}}" data-obj="{{vistor}}" wx:if="{{keys<3}}">{{vistor.username}}</text>
+        </view>
+        <view class="more-vistor" wx:if="{{moreCommonVistor}}">
+          <text class="{{commonVistorActive==keys?'vistor-active':''}}" wx:for="{{commonVistorList}}" wx:for-index="keys" wx:key="keys" wx:for-item="vistor" data-id="{{keys}}" bindtap="changeVistor" data-index="{{index}}" wx:if="{{keys>=3}}" data-obj="{{vistor}}">{{vistor.username}}</text>
+        </view>
+        <view class="add-vistor" wx:if="{{commonVistorList.length>3}}" bindtap="showMoreVistor">更多({{commonVistorList.length-3==0?'':commonVistorList.length-3}})</view>
+      </view>
+    <view class="ticket-contact-item">
+      <view class="ticket-contact-b">姓  名</view>
+      <input class="contact-phone" bindinput="getName" placeholder="请输入姓名" value="{{contactName}}" maxlength="6" />
+    </view>
+    <view class="ticket-contact-item">
+      <view class="ticket-contact-b">电  话</view>
+      <input class="contact-phone" bindinput="getPhone" value="{{contactPhone}}" placeholder="请输入电话号码" maxlength="11" />
+    </view>
+    <view class="ticket-contact-item">
+      <view class="ticket-contact-b {{codeTypeFlag?'active-type':''}}" bindtap="chooseType">{{typeName}}<text class="iconfont icon-xsj"></text></view>
+      <input class="contact-phone" bindinput="getCode" value="{{contactCode}}" placeholder="请输入身份证号" maxlength="18" />
+      <view wx:if="{{codeTypeFlag}}" class="name-type">
+        <view class="name-type-item" wx:for="{{contactType}}" wx:for-index="i"  wx:key="item.id" data-id="{{item.id}}" data-name="{{item.value}}" bindtap="chooseTypeItem">{{item.value}}</view>
+      </view>
+    </view> 
+  </view>
+  <add-dialog wx:if="{{showMask}}" priceObj="{{priceObj}}" priceIndex="{{priceIndex}}" commonVistorList="{{commonVistorList}}" priceList="{{priceList}}"  bind:closeMaskDialog="closeMaskDialog" bind:chooseCommonVistor="chooseCommonVistor" bind:toAddVistor="toAddVistor" ></add-dialog>
+  <dialog title="编辑出行人" show="{{showDialog}}" bindbuttontap="tapDialogButton" buttons="{{textButton}}">
+    <view class="operaBtn-box">
+      <button class="operaBtn" type="warn" bindtap="deleteInfo"> 删除 </button>
+      <button class="operaBtn" type="primary" bindtap="changeInfo"> 编辑 </button>
+    </view>
+  </dialog>
+</view>
+<view class="save-box">
+  <view class="price">
+    <view >总计</view>
+    <view>
+      <text class="price-icon">￥</text>
+      <text class="price-num">{{total}}</text>
+    </view>
+  </view>
+  <view class="btn" bindtap="payOrder">确认订单</view>
+</view>
+<dialog-other title="订单确认" show="{{detailShow}}" bindbuttontap="tapDialogButton" buttons="{{textButton}}">
+  <view class="rule-item" style="font-size: 12px; line-height: 30px; text-align: left;">
+    <view style="font-size: 18px; color: #325572;border-bottom: 1px dashed #35c0ff;">{{cardName}}</view>
+    <view>数量：{{quantity}}张</view>
+    <view>金额：￥<text style="font-size: 18px; color: red;">{{money}}</text></view>
+    <view>领卡人：{{cname}}</view>
+    <view>手机号码：{{mobile}}</view>
+    <view>邮寄地址：{{zonePick}}，{{address}}</view>
+  </view>
+</dialog-other>

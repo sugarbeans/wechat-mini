@@ -1,0 +1,24 @@
+<view class="container">
+  <!-- 日期 -->
+  <view class="date-box">
+    <text bindtap="preDate" class="iconfont icon-jiantou"></text>
+    <view>{{nowDate}}</view>
+    <text bindtap="nextDate" class="iconfont icon-jiantou1"></text>
+  </view>
+  <!-- 星期 -->
+  <view class="week-box">
+    <view class="week-item" wx:for="{{week}}" wx:for-index="index" wx:key="{{index}}"wx:for-item="item">{{item}}</view>
+  </view>
+  <!-- 单独每一天 -->
+  <view class="calender-box">
+    <view class="one-day {{dateActive == i?'date-active':''}}" wx:for="{{flagDay+flagNum}}" wx:for-index="i" wx:key="{{i}}">
+      <block wx:for="{{flagDay}}" wx:for-index="j" wx:key="j" wx:if="{{i-flagNum==j}}">
+        <view class="date-item" wx:for="{{priceList}}" wx:if="{{temp.day==j+1&&temp.month==month}}" wx:for-index="index" wx:key="time" wx:for-item="temp" bindtap="choseDate" data-id="{{i}}" data-priceObj="{{temp}}">
+          <view class="one-day-date">{{j+1<10?'0'+(j+1):j+1}}</view>
+          <view class="one-day-price">￥: 60</view>
+        </view>
+      </block>
+    </view>
+  </view>
+  <slot></slot>
+</view>

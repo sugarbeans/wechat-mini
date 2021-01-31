@@ -1,0 +1,11 @@
+{
+  "navigationStyle":"default",
+  "navigationBarBackgroundColor":"#fff",
+  "navigationBarTitleText":"购买贵宾卡",
+  "navigationBarTextStyle":"black",
+  "backgroundTextStyle": "light",
+  "usingComponents": {
+    "mp-toptips": "../../component/toptips/toptips",
+    "dialog-other": "../../component/dialogOther/dialog"
+  }
+}

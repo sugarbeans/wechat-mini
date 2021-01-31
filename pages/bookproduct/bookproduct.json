@@ -1,0 +1,15 @@
+{
+  "navigationStyle":"default",
+  "navigationBarBackgroundColor":"#fff",
+  "navigationBarTitleText":"预定",
+  "navigationBarTextStyle":"black",
+  "backgroundTextStyle": "light",
+  "usingComponents": {
+    "price-calendar": "../../component/price-calendar/price-calendar",
+    "add-dialog": "../../component/add-dialog/add-dialog",
+    "mp-toptips": "../../component/toptips/toptips",
+    "dialog": "../../component/dialog/dialog",
+    "loading":"../../component/loading/loading",
+    "dialog-other": "../../component/dialogOther/dialog"
+  }
+}

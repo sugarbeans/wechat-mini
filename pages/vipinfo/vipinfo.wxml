@@ -1,0 +1,72 @@
+<view class="main">
+  <mp-toptips msg="{{errorMsg}}" type="error" show="{{showError}}"></mp-toptips>
+  <view class="top-image"><image  src="../../assets/login/{{type}}.png" /></view>
+  <view class="number-box">
+    <view class="name" style="font-size: 18px;">数量：</view>
+    <view class="change-box">
+      <iconfont name="jian-copy1" bindtap="minusTicketIndex" size="{{28}}"></iconfont>
+      <input type="number" class="input-box" value="{{quantity}}"  bindblur="getNumber" />
+      <iconfont name="add" bindtap="addTicketIndex" size="{{28}}"></iconfont>
+    </view>
+  </view>
+  <view style="margin: 15px 0 0 10px;color: #325572;">领卡人信息：</view>
+  <view class="name-box">
+    <view class="name">姓 名</view>
+    <input class="name-input" value="{{cname}}" bindinput="getName" auto-focus placeholder="请输入姓名" maxlength="6" />
+  </view>
+  <view class="name-box">
+    <view class="name">电 话</view>
+    <input type="number" class="name-input" value="{{mobile}}" bindinput="getPhone" placeholder="请输入电话号码" maxlength="11" />
+  </view>
+  <view class="name-box">
+    <view class="name {{codeTypeFlag?'active-type':''}}" bindtap="chooseCodeType">{{typeName}}<text class="iconfont icon-xsj"></text></view>
+    <input class="name-input" type="idcard" value="{{idCard}}" bindinput="getCode" placeholder="请输入证件号码" maxlength="18" />
+    <view wx:if="{{codeTypeFlag}}" class="name-type">
+      <view class="all-name-type-item" wx:for="{{visitorType}}" wx:for-index="i"  wx:key="id" data-id="{{item.id}}" data-name="{{item.value}}" bindtap="chooseTypeItem">{{item.value}}</view>
+    </view>
+  </view>
+  <view class="name-box">
+    <view class="name">省市区</view>
+    <picker mode="region" bindchange='bindRegionChange' value='{{region}}' style="flex: 1;">
+      <text class="name-input">{{zonePick}}</text>
+    </picker>
+  </view>
+    <view class="name-box">
+    <view class="name">详细地址</view>
+    <input class="name-input" bindinput="getAddress" value="{{address}}" placeholder="请输入镇/乡/街道，门牌号" />
+  </view>
+  <view class="name-box">
+    <view class="name">是否邮寄</view>
+    <text wx:if="{{isChecked}}" style="color:#07c160; font-size: 12px;margin-left: 20px;">绿色为需邮寄实物卡</text>
+    <text wx:else style="color:#cccccc; font-size: 12px;margin-left: 20px;">白色为不邮寄实物卡</text>
+    <switch class="tui-fr" checked="{{isChecked}}" bindchange="changeSwitch"/>
+  </view>
+  <view class="detail-box detail">
+    <view>温馨提示：</view>
+    <view>1、旅游年卡一经售出，不予退卡，希望您购买时慎重选择！</view>
+    <view>2、为方便您及时收到实物卡，请确保地址准确性！</view>
+    <view></view>
+  </view>
+  <view class="bottom-image"><image  src="../../assets/login/detail-2.png" /></view>
+  
+</view>
+<view class="save-box">
+  <view class="price">
+    <view >合计</view>
+    <view>
+      <text class="price-icon">￥</text>
+      <text class="price-num">{{money}}</text>
+    </view>
+  </view>
+  <view class="btn" bindtap="finishAddVistor">提交订单</view>
+</view>
+<dialog-other title="订单确认" show="{{detailShow}}" bindbuttontap="tapDialogButton" buttons="{{textButton}}">
+  <view class="rule-item" style="font-size: 12px; line-height: 30px; text-align: left;">
+    <view style="font-size: 18px; color: #325572;border-bottom: 1px dashed #35c0ff;">{{cardName}}</view>
+    <view>数量：{{quantity}}张</view>
+    <view>金额：￥<text style="font-size: 18px; color: red;">{{money}}</text></view>
+    <view>领卡人：{{cname}}</view>
+    <view>手机号码：{{mobile}}</view>
+    <view>邮寄地址：{{zonePick}}，{{address}}</view>
+  </view>
+</dialog-other>

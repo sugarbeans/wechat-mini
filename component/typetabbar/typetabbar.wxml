@@ -1,0 +1,10 @@
+<view class="container">
+  <view class="tab-bar-name">
+    <view class="tab-bar-item {{active=='0'?'active':''}}" data-id="0" bindtap="switchType">景区</view>
+    <view class="tab-bar-item {{active=='1'?'active':''}}" data-id="1" bindtap="switchType">酒店</view>
+    <view class="tab-bar-item {{active=='2'?'active':''}}" data-id="2" bindtap="switchType">特产</view>
+    <view class="tab-bar-item {{active=='3'?'active':''}}" data-id="3" bindtap="switchType">线路</view>
+    <view class="tab-bar-item {{active=='4'?'active':''}}" data-id="4" bindtap="switchType">场馆</view>
+  </view>
+  <slot></slot>
+</view>

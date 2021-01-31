@@ -1,0 +1,89 @@
+<view wx:if="{{showLoading}}">
+  <loading loadingText="{{loadingText}}"></loading>
+</view>
+<view class="container">
+  <mp-toptips msg="{{errorMsg}}" type="error" show="{{showError}}"></mp-toptips>
+  <view class="scroll-top" wx:if="{{showScrollTop && !iscode}}" bindtap="toScrollTop">
+    <view>top</view>
+    <text class="iconfont icon-sjt"></text>
+  </view>
+  <view class="user_box" bindtap="toUser" wx:if="{{iscode}}">
+    <text class="iconfont icon-xingming"></text>
+  </view>
+  <view class="title-img">
+    <image src="{{poi.imageList[0]}}"  binderror="bindErrorImg" data-errorimg="{{0}}" />
+  </view>
+  <view class="title-body">
+    <block wx:if="{{yhProductList.length > 0 }}">
+    <view style="height: 50px; line-height: 50px; font-size: 20px; border-bottom: 3px dashed #ccc; color: #0468bc;">特惠区<image class="ticket-sale" src="../../assets/banner/sale.png"></image></view>
+    <view class="ticket-item" wx:for="{{yhProductList}}" wx:for-index="index" wx:key="index" wx:if="{{index<=1}}">
+      <view class="ticket">
+        <view class="ticket-name">{{item.ticketName}}</view>
+        <view class="ticket-price"><text>￥</text><text style="font-size: 18px; text-decoration:line-through; color: #cccccc;margin-right: 10px;">{{item.priceList[0].listingprice}}</text><text>{{item.priceList[0].todayPrice}}</text>起</view>
+        
+        <!-- <view class="sea-info" wx:if="{{item.memo}}" data-obj="{{item}}" bindtap="seeRule">预定说明<text class="iconfont icon-jiantou1"></text></view> -->
+      </view>
+      <view class="ticket-operat">
+        <view class="ticket-btn" data-obj="{{item}}" bindtap="toBookProduct">预订</view>
+      </view>
+    </view>
+    </block>
+    <view style="height: 50px; line-height: 50px; font-size: 20px; border-bottom: 3px dashed #ccc; color: #0468bc; margin-top: 20px;">普通门票</view>
+    <view class="ticket-item" wx:for="{{productList}}" wx:for-index="index" wx:key="index" wx:if="{{item.byCateGoryType==='0001'}}">
+      <view class="ticket">
+        <view class="ticket-name">{{item.ticketName}}</view>
+        <view class="ticket-price"><text>￥</text><text style="font-size: 18px; text-decoration:line-through; color: #cccccc;margin-right: 10px;">{{item.priceList[0].listingprice}}</text><text>{{item.priceList[0].todayPrice}}</text>起</view>
+        
+        <!-- <view class="sea-info" wx:if="{{item.memo}}" data-obj="{{item}}" bindtap="seeRule">预定说明<text class="iconfont icon-jiantou1"></text></view> -->
+      </view>
+      <view class="ticket-operat">
+        <view class="ticket-btn" data-obj="{{item}}" bindtap="toBookProduct">预订</view>
+      </view>
+    </view>
+    <view style="height: 50px; line-height: 50px; font-size: 20px; border-bottom: 3px dashed #ccc; color: #0468bc; margin-top: 20px;">套票<image class="ticket-sale" src="../../assets/banner/sale.png"></image></view>
+    <view class="ticket-item" wx:for="{{productList}}" wx:for-index="index" wx:key="index" wx:if="{{item.byCateGoryType==='0010'}}">
+      <view class="ticket">
+        <view class="ticket-name">{{item.ticketName}}</view>
+        <view class="ticket-price"><text>￥</text><text style="font-size: 18px; text-decoration:line-through; color: #cccccc;margin-right: 10px;">{{item.priceList[0].listingprice}}</text><text>{{item.priceList[0].todayPrice}}</text>起</view>
+        
+        <!-- <view class="sea-info" wx:if="{{item.memo}}" data-obj="{{item}}" bindtap="seeRule">预定说明<text class="iconfont icon-jiantou1"></text></view> -->
+      </view>
+      <view class="ticket-operat">
+        <view class="ticket-btn" data-obj="{{item}}" bindtap="toBookProduct">预订</view>
+      </view>
+    </view>
+  </view>
+  <view class="scenic-introduce" wx:if="{{poi.bookNote}}">
+    <view class="scenic-title">预订说明</view>
+    <view class="introduce-text">
+      <rich-text nodes="{{poi.bookNote}}"></rich-text>
+    </view>
+  </view>
+  <view class="scenic-introduce" wx:if="{{poi.detailedNote}}">
+    <view class="scenic-title">景区介绍</view>
+    <view class="introduce-text"><rich-text nodes="{{poi.detailedNote}}"></rich-text></view>
+  </view>
+  <view class="scenic-introduce" wx:if="{{productList.verificationShow}}">
+    <view class="scenic-title">验证说明</view>
+    <view class="introduce-text">
+      <view wx:for="{{productList.verificationShow}}" wx:for-index="index" wx:key="index" class="">{{index+1+'.'+item.verificationShow}}</view>
+    </view>
+  </view>
+  <view class="scenic-introduce" wx:if="{{!showLoading}}">
+    <view class="scenic-title">位置详情</view>
+    <view class="introduce-text">
+      <map
+        id="myMap"
+        style="width: 100%; height: 300px;"
+        latitude="{{latitude}}"
+        longitude="{{longitude}}"
+        markers="{{markers}}"
+        scale="{{scale}}"
+        show-location
+      ></map>
+    </view>
+  </view>
+</view>
+<dialog title="预订说明" show="{{ruleShow}}" bindbuttontap="tapDialogButton" buttons="{{textButton}}">
+  <view class="rule-item">{{itemRule}}</view>
+</dialog>

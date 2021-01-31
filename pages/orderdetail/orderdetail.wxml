@@ -1,0 +1,66 @@
+<view class="container">
+  <view wx:if="{{showPayLoading}}">
+    <loading loadingText="{{loadingText}}"></loading>
+  </view>
+  <view class="order-code-box">
+    <view class="">
+      <view class="iconfont icon-wzf"></view>
+      <view class="order-statu">{{orderInfoView.orderMsg}}</view>
+    </view>
+    <view class="order-code">
+      <text >订单号：{{orderInfoView.orderId}}</text>
+    </view>
+  </view>
+  <view class="order-title-box">
+    <view class="order-title">{{orderInfoView.ticketName}}</view>
+    <view class="order-detail">
+      <view class="order-detail-l">
+        <view class="order-a order-c"></view>
+        <view class="order-a order-b">{{orderInfoView.name}}</view>
+        <view class="order-a order-b">成人票</view>
+      </view>
+      <view class="order-price">￥{{orderInfoView.money}}</view>
+    </view>
+  </view>
+  <view class="order-title-box">
+    <view class="order-title">费用说明</view>
+    <view class="order-detail">
+      <view class="order-detail-s">
+        <view class="order-a order-b a">单价：{{orderInfoView.price}}</view>
+        <view class="order-a order-b a">总数量：{{orderInfoView.quantity}}</view>
+        <view class="order-a order-b a">退订数量：{{orderInfoView.refundQuantity}}</view>
+        <view class="order-a order-b a">退订金额：{{orderInfoView.refundMoney}}</view>
+        <view class="order-a order-b a">消费数量：{{orderInfoView.consumeQuantity}}</view>
+        <view class="order-a order-b a">剩余数量：{{orderInfoView.surplusQuantity}}</view>
+      </view>
+      <view class="order-price"></view>
+    </view>
+  </view>
+  <view class="order-time-box">
+    <view class="order-time">入园日期：{{orderInfoView.playDate}}</view>
+    <view class="order-time">下单时间：{{orderInfoView.createTime}}</view>
+    <view class="ticket-rule">
+      <view class="rule">
+        <text class="iconfont icon-ok icon-ok2" wx:for="{{orderInfoView.ruleRefund}}" wx:for-item="e" wx:for-index="index" wx:key="index"><text class="rule-text" >{{e}}</text></text>
+      </view>
+    </view>
+  </view>
+  <view class="order-title-box" wx:if="{{orderInfoView.orderPassengerList.length>0}}">
+    <view class="order-title">出行人信息</view>
+    <view class="order-detail-vistor">
+      <view class="order-detail-vistor-item" wx:for="{{orderInfoView.orderPassengerList}}">
+        <view class="vistor-name">{{item.person.name}}</view>
+        <view class="vistor-code-num">{{item.person.credentials}}</view>
+        <view class="vistor-qrcode" data-voucherPic="{{item.voucherPic}}" bindtap="showQrcode" wx:if="{{orderInfoView.statu==4&&item.voucherPic}}">
+          <view class="iconfont icon-qrcode"></view>
+          <view class="vistor-qrcode-text" >二维码</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <dialog title="核销码" show="{{showItemDialog}}" bindbuttontap="tapItemDialogButton" buttons="{{textButton}}">
+      <view style="width:100%">
+        <image style="width:100%" src="{{url}}" />
+      </view>
+  </dialog>
+</view>

@@ -1,0 +1,251 @@
+/**index.wxss**/
+.main{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  color: #325572;
+}
+image{
+  width: 100%;
+  height: 100%; 
+}
+.logo{
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  position: absolute;
+  top: 40px;
+  left: 2%;
+}
+.logo-box{
+  width: 70px;
+  height: 70px;
+  position: relative;
+}
+.logo-box image{
+  width: 100%;
+  height: 100%;
+}
+.logo-btn {
+  width: 100%;
+  position: relative;
+}
+.btn-image {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+}
+.search{
+  width: 80%;
+  height: 40px;
+  background-color: #ffffff;
+  line-height: 40px;
+  border-radius: 20px;
+  position: absolute;
+  left: 10%;
+  top: -20px;
+  z-index: 2;
+}
+.search-text{
+  margin-left: 10px;
+}
+.search-icon{
+  width: 40px;
+}
+.icon-sousuo{
+  color: #cccccc;
+}
+.search-text-item{
+  font-size: 14px;
+  margin-left: 8px;
+  color: #cccccc;
+}
+.icon-box, .icon-box2{
+  width: 100%;
+  position: absolute;
+  top: 30px;
+  left: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  z-index: 2;
+}
+.icon-box2 {
+  top: 140px;
+}
+.icon-a{
+  width: 23%;
+  margin: 0 1%;
+  text-align: center;
+  height: 100px;
+  border-radius: 20px;
+  background-color: #fffdfd;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.icon-text{
+  font-size: 14px;
+}
+.icon-img{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin: 10px;
+  color: #ffffff;
+  box-sizing: border-box;
+}
+.icon-img-vip {
+  margin: 10px 0;
+  width: 60px;
+  height: 50px;
+  color: #ffffff;
+  box-sizing: border-box;
+}
+.a{
+  background-color: #fe6a3a;
+}
+.b{
+  background-color: #7b87ff;
+}
+.c{
+  background-color: #fea000;
+}
+.d{
+  background-color: #4ee0ff;
+}
+.e{
+  background-color: #35c0ff;
+}
+.icon-img>text{
+  font-size: 30px;
+}
+.hot-ticket{
+  margin-top: 260px;
+  margin-bottom: 80px;
+}
+.hot-ticket-title{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  position: relative;
+}
+.hot-ticke-border{
+  position: absolute;
+  left: 10px;
+  bottom: 2px;
+  width: 40px;
+  height: 5px;
+  z-index: -1;
+}
+.hot-ticket-title-text{
+  font-size: 20px;
+  color: #325572;
+}
+.hot-ticket-title-more{
+  font-size: 16px;
+  color: #a7a8a9;
+}
+.ticket-main {
+  width: 100%;
+  position: relative;
+}
+.util-bg {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 200px;
+  bottom: 0;
+}
+.ticket-box{
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+  box-sizing: border-box;
+  border-radius: 6px;
+  background-color: #ffffff;
+  margin-top: 20px;
+  overflow: hidden;
+}
+.ticket-image-box{
+  overflow: hidden;
+}
+.ticket-image{
+  width: 100%;
+  height: 200px;
+}
+.ticket-text-box{
+  display: flex;
+  flex-direction: column;
+  padding: 0 10px;
+  box-sizing: border-box;
+  height: 60px;
+}
+.ticket-text-box>view:first-child{
+  font-size: 16px;
+  height: 30px;
+  line-height: 30px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  word-break: break-all;
+}
+.ticket-text-box>view:last-child{
+  color: #b6b6b6;
+  height: 30px;
+  line-height: 30px;
+  font-size: 12px;
+  margin-bottom: 6px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  word-break: break-all;
+}
+.hot-small{
+  display: flex;
+  /* justify-content: flex-start; */
+  flex-wrap: wrap;
+  margin-top: 30px;
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+  box-sizing: border-box;
+}
+.hot-small-box{
+  width: 30%;
+  height: 100px;
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #ffffff;
+  margin: 0 1.5%;
+}
+.hot-small-img{
+  width: 100%;
+  height: 100px;
+}
+.hot-small-title{
+  width: 100%;
+  line-height: 20px;
+  position: absolute;
+  left: 10px;
+  bottom: 0;
+  color: #ffffff;
+  z-index: 999;
+  font-size: 14px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  word-break: break-all;
+}
+.footer {
+  margin-top: 20px;
+  height: 30px;
+  line-height: 30px;
+  margin-bottom: 5px;
+  font-size: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

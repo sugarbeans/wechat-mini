@@ -1,0 +1,30 @@
+page{
+  background-color: #ffffff;
+}
+.search-box{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.search-history{
+  margin-top: 60px;
+  padding: 0 10px;
+}
+.search-history-title{
+  font-size: 20px;
+  font-weight: 900;
+}
+.search-history-box{
+  display: flex;
+  flex-wrap: wrap;
+}
+.history-text{
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  padding: 0 10px;
+  margin: 10px;
+  border-radius: 6px;
+  background-color: #f9f9f9;
+}

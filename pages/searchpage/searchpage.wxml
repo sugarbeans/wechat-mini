@@ -1,0 +1,18 @@
+<view class="container">
+  <mp-toptips msg="{{errorMsg}}" type="error" show="{{showError}}"></mp-toptips>
+  <view class="search-box">
+    <mp-searchbar bindselectresult="selectResult" search="{{search}}" searchState="{{searchState}}" placeholder="{{placeholder}}" value="{{value}}" result="{{result}}"></mp-searchbar>
+  </view>
+  <view class="search-history" wx:if="{{searchList.length>0}}">
+    <view class="search-history-title">历史搜索</view>
+    <view class="search-history-box">
+      <view class="history-text" wx:for="{{searchList}}" wx:for-item="item" wx:key="{{item.encryptId}}" data-type="{{item.type}}" data-id="{{item.encryptId}}" bindtap="searchHistory">{{item.name}}</view>
+    </view>
+  </view>
+  <view class="search-history" wx:if="{{hotSearchList.length>0}}">
+    <view class="search-history-title">热门搜索</view>
+    <view class="search-history-box">
+      <view class="history-text" wx:for="{{hotSearchList}}" wx:for-item="item" wx:key="{{item.encryptId}}" data-type="{{item.type}}" data-id="{{item.encryptId}}" bindtap="searchHistory">{{item.name}}</view>
+    </view>
+  </view>
+</view>

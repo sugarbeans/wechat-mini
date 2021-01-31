@@ -1,0 +1,14 @@
+{
+  "navigationStyle":"default",
+  "navigationBarBackgroundColor":"#fff",
+  "navigationBarTitleText":"订单",
+  "navigationBarTextStyle":"black",
+  "backgroundTextStyle": "dark",
+  "usingComponents": {
+    "dialog": "../../component/dialog/dialog",
+    "mp-toptips": "../../component/toptips/toptips",
+    "loading":"../../component/loading/loading"
+  },
+  "enablePullDownRefresh": true,
+  "onReachBottomDistance": 50
+}

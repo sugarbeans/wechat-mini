@@ -1,0 +1,11 @@
+<view class="container">
+  <view class="mask"></view>
+  <view class="mask-bg-img">
+    <image src="../../assets/banner/util-bg.png" />
+  </view>
+  <view class="loading-img" >
+    <image src="../../assets/banner/loading.gif" />
+    <view class="loading-text">{{loadingText}}</view>
+  </view>
+  <slot></slot>
+</view>

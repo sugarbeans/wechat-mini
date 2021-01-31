@@ -1,0 +1,12 @@
+{
+  "navigationStyle":"default",
+  "navigationBarBackgroundColor":"#fff",
+  "navigationBarTitleText":"门票详情",
+  "navigationBarTextStyle":"black",
+  "backgroundTextStyle": "light",
+  "usingComponents": {
+    "mp-toptips": "../../component/toptips/toptips",
+    "dialog": "../../component/dialog/dialog",
+    "loading":"../../component/loading/loading"
+  }
+}
